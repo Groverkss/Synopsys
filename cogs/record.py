@@ -48,12 +48,20 @@ class Record(commands.Cog):
                 "content": message.clean_content,
                 "datetime": message.created_at,
                 "author": message.author.display_name,
+                "reaction": sum(
+                    reaction.count for reaction in message.reactions
+                ),
             }
             for message in raw_messages
             if message.clean_content
         ]
 
         await ctx.send("Done.")
+
+        # for message in clean_messages:
+        #     for values in message.values():
+        #         print(values, end="\t")
+        #     print()
 
         return
 
