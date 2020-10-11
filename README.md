@@ -1,10 +1,10 @@
-# Summer-i-ser
+# Synopsys 
 
 ![HackMD documents](https://hackmd.io/badge.svg)
 
 > "Perhaps the best test of a man's intelligence is his capacity for making a summary." - Lytton Strachey, English writer and critic. 
 
-***Summer-i-ser* is a discord-bot that summaries conversations and records them for future use.**
+***Synopsys* is a discord-bot that summaries conversations and records them for future use.**
 
 This project is [our](#Members) official submission to Hack@Home under web-based applications category. A published version of this README is also available [here](https://hackmd.io/@banrovegrie/BJKLiOlPP).
 
@@ -13,12 +13,7 @@ This project is [our](#Members) official submission to Hack@Home under web-based
 - [About](#About)
 - [Members](#Members)
 - [Basic Working Version](#Basic-Working-Version)
-    - Features
-    - Pre-requisites
-    - Getting Started
-    - Implementation
-    - Project Structure
-- [Further Development](#Further-Development)
+- [Further Ideas](#Further-Ideas)
 - [License](LICENSE)
 
 <!--I will remove the current o's later as we complete them-->
@@ -47,9 +42,14 @@ This not only allows the user to obtain a **automated-summary** of any given cha
 
 ### Technologies Involved
 
-<!--The current implementation is majorly based on python. We have used ...
+- Python 3
+- Firebase and Firestore 
+- Google Cloud for hosting the bot on a virtual machine
+- `Discord.py` for functionality of discord bot
+- nltk for conversation summarisation
+- React for creating the frontend interference
+
 For a detailed description regarding the current implementation check [this](#Implementation).
-(lot more to add)-->
 
 ### Automated Chat Summarization
 
@@ -57,10 +57,78 @@ Automated-summarization of text has been applied to quite a lot of genres includ
 
 However, when compared to the above examples, very little work has been done in the field of chat summarization. This is because there are several problems associated with it due to fact that chats are inherently noisy, unstructured, informal and involves frequent shifts in topic.
 
-Our current working version uses a basic **cosine-similarity model** to generate a unique set of words (keywords) and thus use these keywords to evaluate the given data set of chats and return only *most unique sentences* as a part of the summary. This basic summarization is effectively extractive by nature. For a detailed description on implementation of this model, look [here](#Implementation).
+Our current working version uses a basic **cosine-similarity model** to generate a unique set of words (keywords) and thus use these keywords to evaluate the given data set of chats and return only *most unique sentences* as a part of the summary. This basic summarization is extractive by nature. For a detailed description on implementation of this model, look [here](#Implementation).
 
-Our further plan involves using more accurate and sophisticated algorithms for the purpose of summarization. We have explained our proposed model in [further developments](#Further-Development).
+In [Further Ideas](#Further-Ideas), we also attempt at constructing a better summarization algorithm, based on present research on the topic.
 
 ## Members
 
 The team involved in the project comprises of [Kunwar Shaanjeet Singh Grover](https://github.com/Groverkss), [Vishva Saravanan](https://github.com/v15hv4), [Mayank Goel](https://github.com/MayankGoel28) and [Alapan Chaudhuri](https://github.com/banrovegrie), respectively.
+
+## Basic Working Version
+
+### Features
+
+- Easy to use conversation summerisation based on discord messages
+- Sick of scrolling back thousands of messages to get an important conversation you had? Record the conversation and review it again anytime the webinterface which gives a summary of the conversation as well as the keywords.
+- Can be added to any required server
+
+### Installation
+
+:warning: **This project uses Python 3**: Usage of Python 2 may have varying effect
+
+- Create a virtual environment and install dependencies:
+
+    ```python
+    $ python3 -m venv .env
+    $ . .env/bin/activate
+    $ pip3 install -r requirements.txt
+    ```
+
+- Install the nltk corpus required:
+
+    ```python
+    $ python3 nltkmodules.py
+    ```
+
+- Export the required environment variables:
+
+    ```bash
+    $ export BOT_TOKEN="TOKEN_FOR_DISCORD_BOT"
+    $ export BOT_PREFIX="PREFIX_FOR_BOT"
+    ```
+
+- Run the bot:
+
+    ```python
+    python3 main.py
+    ```
+
+To add the record functionality, you need to connect the bot to a firestore database. Place the serviceAccount.json as firestore/secret.json. This allows the bot to use the record functionality to record database on the corresponding firestore database.
+
+<!-- Vishva instructions -->
+
+### Implementation
+
+The text summarizer works on the mathematical principle of cosine similarity for non-zero vectors.
+
+For this, we have represented each line as a vector, of unique words, quantifying it on basis of how "important" or frequent it is, and this idea is done using a graph-based TextRank algorithm on the similarity matrix generated on the above vectors. 
+
+<img src="https://cdn.discordapp.com/attachments/702963059764887656/764891735427514378/unknown.png">
+
+Additional challenges were cleaning and parsing the data to include only relevant keywords, and this involved removal of stopwords and manual addition of common words. Additionally, discord usernames and other special characters like emojis were removed. 
+
+The summarizer also outputs a list of keywords, on basis of frequency. This list is also cleaned for stopwords and other common words that do not convey the meaning of a sentence.
+
+
+## Further Ideas
+
+Now that we have explained how our working version deals with summarization, we would like to elaborate upon how we plan to **better the summarization algorithm**.
+
+Given, a conversation as data-set in the form of a series of chats, we shall first remove noise in the form of spelling errors and use text segmentation to formalize the chats to some extent.
+
+Then, we differentiate chunks of conversation using topic modeling and then using similarity-index upon the few sets of topics to segregate the large chunk of chats.
+
+Once we have identified the primary topic (tag) of a certain series of chats, we build a semantic space of words. With the help of a co-occurrence HAL model, we use the given space we calculate cumulative scores of sentences.
+
+Using these scores, we include sentences and generate required summary.
