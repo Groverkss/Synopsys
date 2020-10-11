@@ -2,17 +2,23 @@
 
 > "Perhaps the best test of a man's intelligence is his capacity for making a summary." - Lytton Strachey, English writer and critic. 
 
-**Synopsys** is a discord-bot that summaries conversations and records them for future use.
+**Synopsys** is a discord-bot that summaries conversations and records them for future use. 
 
-This project is [our](#Members) official submission to Hack@Home under web-based applications category. A published version of this README is also available [here](https://hackmd.io/@banrovegrie/BJKLiOlPP).
+A published version of this README is also available [here](https://hackmd.io/@banrovegrie/BJKLiOlPP). Use [this link](https://summer-iser.web.app/) to checkout the demo webapp.
 
 So, go ahead! Use Synopsis to **find your TL;DRs**.
 
 ## Table of Contents
 
 - [About](#About)
+    - [Our Idea](#Our-Idea)
+    - [Technologies Involved](#Technologies-Involved)
+    - [Automated Chat Summarization](#Automated-Chat-Summarization) 
 - [Members](#Members)
 - [Basic Working Version](#Basic-Working-Version)
+    - [Features](#Features)
+    - [Installation](#Installation)
+    - [Implementation](#Implementation)
 - [Further Ideas](#Further-Ideas)
 - [License](LICENSE)
 
@@ -62,7 +68,7 @@ In [Further Ideas](#Further-Ideas), we also attempt at constructing a better sum
 
 The team involved in the project comprises of [Kunwar Shaanjeet Singh Grover](https://github.com/Groverkss), [Vishva Saravanan](https://github.com/v15hv4), [Mayank Goel](https://github.com/MayankGoel28) and [Alapan Chaudhuri](https://github.com/banrovegrie), respectively.
 
-## Basic Working Version
+# Basic Working Version
 
 ### Features
 
@@ -70,7 +76,7 @@ The team involved in the project comprises of [Kunwar Shaanjeet Singh Grover](ht
 - Sick of scrolling back thousands of messages to get an important conversation you had? Record the conversation and review it again anytime the webinterface which gives a summary of the conversation as well as the keywords.
 - Can be added to any required server
 
-### Installation
+## Installation
 
 :warning: **This project uses Python 3**: Usage of Python 2 may have varying effect
 
@@ -138,6 +144,8 @@ The webapp allows to view the recordings anytime with a summary and keywords.
 The following image shows the original conversation thread for the above attached image of summary.
 
 <img src="https://cdn.discordapp.com/attachments/759735584444121110/764908497233379388/unknown.png">
+
+Link to the mentioned web-app: [Synopsis App](https://summer-iser.web.app/).
 
 ## Further Ideas
 
