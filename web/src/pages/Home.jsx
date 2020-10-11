@@ -26,7 +26,7 @@ export default () => {
                         <Card
                             tag={Link}
                             to={`/records/${record.id}`}
-                            className="w-100 discord-bg-secondary discord-fg-primary my-2"
+                            className="w-100 discord-bg-tertiary discord-fg-primary my-2"
                         >
                             <CardBody>{`Recording: ${record.datetime.toDate()}`}</CardBody>
                         </Card>

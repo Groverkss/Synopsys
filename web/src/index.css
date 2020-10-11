@@ -4,7 +4,7 @@ body {
         "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #36393f !important;
+    background-color: #2f3136 !important;
 }
 
 code {
@@ -17,6 +17,10 @@ code {
 
 .discord-bg-secondary {
     background-color: #2f3136 !important;
+}
+
+.discord-bg-tertiary {
+    background-color: #202225 !important;
 }
 
 .discord-fg-primary {
