@@ -2,9 +2,9 @@
 
 ![HackMD documents](https://hackmd.io/badge.svg)
 
-**Summer-i-ser:** *a discord-bot that summaries conversations and records them for future use.*
+> "Perhaps the best test of a man's intelligence is his capacity for making a summary." - Lytton Strachey, English writer and critic. 
 
-> Perhaps the best test of a man's intelligence is his capacity for making a summary.
+***Summer-i-ser* is a discord-bot that summaries conversations and records them for future use.**
 
 This project is our official submission for Hack@Home under Web-based Application category.
 
