@@ -42,21 +42,30 @@ export default (props) => {
         <Container className="pb-5">
             <Row>
                 <Col md={6}>
-                    <Row>
-                        {messages.map((message) => (
-                            <Message {...message} />
-                        ))}
-                    </Row>
+                    <Container fluid className="rounded p-4 discord-bg-tertiary">
+                        <h3 className="discord-fg-primary">
+                            <span className="discord-fg-secondary">#</span> messages
+                        </h3>
+                        <Row className="mt-4">
+                            {messages.map((message) => (
+                                <Message {...message} />
+                            ))}
+                        </Row>
+                    </Container>
                 </Col>
                 <Col>
                     <Container fluid className="rounded p-4 discord-bg-tertiary">
-                        <div className="mb-3">
-                            <h3 className="discord-fg-primary"> summary </h3>
-                            <div className="discord-fg-primary"> {summary} </div>
+                        <div className="mb-5">
+                            <h3 className="discord-fg-primary">
+                                <span className="discord-fg-secondary">#</span> summary
+                            </h3>
+                            <div className="discord-fg-primary mt-4"> {summary} </div>
                         </div>
-                        <div className="mt-3">
-                            <h4 className="discord-fg-primary"> keywords </h4>
-                            <div className="discord-fg-secondary"> {keywords} </div>
+                        <div className="mt-5">
+                            <h5 className="discord-fg-primary">
+                                <span className="discord-fg-secondary">#</span> keywords
+                            </h5>
+                            <div className="discord-fg-secondary mt-3"> {keywords.join(", ")} </div>
                         </div>
                     </Container>
                 </Col>
