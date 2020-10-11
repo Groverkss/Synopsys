@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Card } from "reactstrap";
 import firebase from "../firebase";
 
+import Message from "../components/Message";
+
 export default (props) => {
     const [messages, setMessages] = useState([]);
     const [keywords, setKeywords] = useState([]);
@@ -40,12 +42,7 @@ export default (props) => {
                 <Col md={6}>
                     <Row>
                         {messages.map((message) => (
-                            <Col xs={12} key={message.id}>
-                                <Card className="w-50">
-                                    <div>{`${message.author} at ${message.datetime.toDate()}`}</div>
-                                    {message.content}
-                                </Card>
-                            </Col>
+                            <Message {...message} />
                         ))}
                     </Row>
                 </Col>

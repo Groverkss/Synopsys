@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col } from "reactstrap";
+import { Container, Row, Col, Card, CardBody } from "reactstrap";
+import { Link } from "react-router-dom";
 import firebase from "../firebase";
 
 export default () => {
@@ -22,7 +23,13 @@ export default () => {
             <Row>
                 {records.map((record) => (
                     <Col xs={12} key={record.id}>
-                        {`Recording: ${record.datetime.toDate()}`}
+                        <Card
+                            tag={Link}
+                            to={`/records/${record.id}`}
+                            className="w-100 discord-bg-secondary discord-fg-primary my-2"
+                        >
+                            <CardBody>{`Recording: ${record.datetime.toDate()}`}</CardBody>
+                        </Card>
                     </Col>
                 ))}
             </Row>
