@@ -2,16 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import "./App.css";
 
-import firebase from "./firebase";
-
 import Home from "./pages/Home";
 import Record from "./pages/Record";
 import NotFound from "./pages/NotFound";
-
-// firebase.firestore().collection("bruh").add({
-//     title: "idk",
-//     duration: 20,
-// });
 
 const App = () => {
     return (
