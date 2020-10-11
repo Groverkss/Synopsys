@@ -19,7 +19,7 @@ def deEmojify(text):
     return regrex_pattern.sub(r'', text)
 
 def create_common_word_list(list_of_sentences):
-    file = open('very_common_words.txt', 'r')
+    file = open('summarisation/very_common_words.txt', 'r')
     file_string = file.read()
     common_word_list = file_string.split('\n')
     all_names = [sent['author'] for sent in list_of_sentences]
