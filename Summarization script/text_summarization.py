@@ -4,10 +4,13 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.cluster.util import cosine_distance
 from nltk import sent_tokenize
+from nltk import word_tokenize
+from nltk.corpus import words
 import numpy as np
 import networkx as nx
 from pprint import pprint
 from stringtodict import ListFromString
+from collections import Counter
 
 
 def read_messages(filename):
@@ -16,7 +19,7 @@ def read_messages(filename):
     flat_list = [item for sublist in all_sents for item in sublist]
     final_sentences = []
     for sentence in flat_list:
-        if len(sentence)>5:
+        if len(sentence) > 5:
             final_sentences.append(sentence)
     return final_sentences
 
@@ -74,11 +77,36 @@ def generate_summary(filename, percentage=8):
         summarize_text.append("".join(ranked_sentence[i][1]))
     return ". ".join(summarize_text)
 
-def generate_keywords():
+
+def generate_keywords(n=8):
     sentences = read_messages("sampleinput.txt")
+    stop_words = stopwords.words('english')
+    words = []
+    for sentence in sentences:
+        sentence_words = word_tokenize(sentence)
+        for i in range(len(sentence_words)):
+            sentence_words[i] = sentence_words[i].lower()
+        words.append(sentence_words)
+    flat_words = [item for sublist in words for item in sublist]
+    final_wordlist = []
+    for flat_word in flat_words:
+        if flat_word not in stop_words and len(flat_word) > 3:
+            final_wordlist.append(flat_word)
+    freq = Counter(final_wordlist)
+    common_keywords = (freq.most_common(n))
+    file = open('very_common_words.txt', 'r')
+    file_string = file.read()
+    common_word_list = file_string.split('\n')
+    final_words = []
+    for c in common_keywords:
+        if c[0] not in common_word_list:
+            final_words.append(c[0])
+    return final_words
+
 
 summarized_string = generate_summary("sampleinput.txt")
 keywords = generate_keywords()
 
 if __name__ == "__main__":
     print(summarized_string)
+    print(keywords)
