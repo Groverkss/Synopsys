@@ -1,13 +1,8 @@
 from discord.ext import commands
 from json import dump, load
+from pprint import pprint
 
-import sys
-
-sys.path.append(
-    "/home/kunwar/Desktop/Projects/Summariser-Bot/Summarization script"
-)
-
-from text_summarization import generate_summary
+from summarisation.text_summarisation import generate_summary, generate_keywords
 
 
 class Record(commands.Cog):
@@ -64,12 +59,13 @@ class Record(commands.Cog):
             if message.clean_content
         ]
 
-        await ctx.send("Done reading!.")
-        await ctx.send("Summarizing...")
-
         summary = generate_summary(clean_messages)
+        keywords = generate_keywords(clean_messages)
 
-        await ctx.send(summary)
+        if summary:
+            await ctx.send(summary)
+        if keywords:
+            await ctx.send(keywords)
 
 
 def setup(bot):
