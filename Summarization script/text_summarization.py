@@ -10,8 +10,8 @@ from pprint import pprint
 from stringtodict import ListFromString
 
 
-def read_messages(file_name):
-    list_of_sentences = ListFromString()
+def read_messages():
+    list_of_sentences = ListFromString("sampleinput.txt")
     all_sents = [sent_tokenize(sent['content']) for sent in list_of_sentences]
     flat_list = [item for sublist in all_sents for item in sublist]
     final_sentences = []
@@ -60,10 +60,10 @@ def build_similarity_matrix(sentences, stop_words):
     return similarity_matrix
 
 
-def generate_summary(file_name, percentage=8):
+def generate_summary(filename, percentage=8):
     stop_words = stopwords.words('english')
     summarize_text = []
-    sentences = read_messages(file_name)
+    sentences = read_messages(filename)
     sentence_similarity_martix = build_similarity_matrix(sentences, stop_words)
     sentence_similarity_graph = nx.from_numpy_array(sentence_similarity_martix)
     scores = nx.pagerank(sentence_similarity_graph)
@@ -74,7 +74,11 @@ def generate_summary(file_name, percentage=8):
         summarize_text.append("".join(ranked_sentence[i][1]))
     return ". ".join(summarize_text)
 
-summarized_string = generate_summary("paragraph.txt")
+def generate_keywords():
+    sentences = read_messages()
+
+summarized_string = generate_summary("sampleinput.txt")
+keywords = generate_keywords()
 
 if __name__ == "__main__":
     print(summarized_string)
