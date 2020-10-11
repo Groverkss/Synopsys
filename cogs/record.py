@@ -3,6 +3,8 @@ from json import dump, load
 from pprint import pprint
 
 from summarisation.text_summarisation import generate_summary, generate_keywords
+from firestore.config import Firestore
+
 
 async def convert_to_summary(ctx, start, end):
     """Returns (summary, keywords) from a start and end message"""
@@ -39,12 +41,13 @@ async def convert_to_summary(ctx, start, end):
     summary = generate_summary(clean_messages)
     keywords = generate_keywords(clean_messages)
 
-    return summary, keywords
+    return summary, keywords, clean_messages
 
 
 class Record(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        self.firestore = Firestore()
 
     @commands.command(brief="Ping Pong")
     async def ping(self, ctx):
@@ -63,10 +66,12 @@ class Record(commands.Cog):
             )
             return
 
-        summary, keywords = await convert_to_summary(ctx, start, end)
+        summary, keywords, clean_messages = await convert_to_summary(
+            ctx, start, end
+        )
 
         if summary:
-            summary = '```\n' + summary + '```'
+            summary = "```\n" + summary + "```"
             await ctx.send(summary)
         else:
             await ctx.send("```Not enough messages to generate summary```")
@@ -76,7 +81,7 @@ class Record(commands.Cog):
             for word in keywords:
                 keyword_str += f"{word}, "
 
-            keyword_str = '```\n' + keyword_str +  '```'
+            keyword_str = "```\n" + keyword_str + "```"
             await ctx.send(keyword_str)
         else:
             await ctx.send("```Not enough messages to generate keywords```")
@@ -93,7 +98,20 @@ class Record(commands.Cog):
             )
             return
 
-        summary, keywords = convert_to_summary(ctx, start, end)
+        summary, keywords, clean_messages = await convert_to_summary(
+            ctx, start, end
+        )
+
+        if not summary:
+            summary = f'Not enough messages to generate summary'
+
+        try:
+            self.firestore.record_conversation(
+                summary, keywords, clean_messages
+            )
+            await ctx.send("```Conversation recorded successfully!```")
+        except:
+            await ctx.send("```Error while recording conversation```")
 
 
 def setup(bot):

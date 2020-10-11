@@ -134,3 +134,6 @@ run.sh
 # Vim configs
 .vim
 *.swp
+
+# Firestore credentials
+secret.json
