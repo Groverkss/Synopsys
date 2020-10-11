@@ -1,12 +1,12 @@
 # Synopsys 
 
-![HackMD documents](https://hackmd.io/badge.svg)
-
 > "Perhaps the best test of a man's intelligence is his capacity for making a summary." - Lytton Strachey, English writer and critic. 
 
-***Synopsys* is a discord-bot that summaries conversations and records them for future use.**
+**Synopsys** is a discord-bot that summaries conversations and records them for future use.
 
 This project is [our](#Members) official submission to Hack@Home under web-based applications category. A published version of this README is also available [here](https://hackmd.io/@banrovegrie/BJKLiOlPP).
+
+So, go ahead! Use Synopsis to **find your TL;DRs**.
 
 ## Table of Contents
 
@@ -15,8 +15,6 @@ This project is [our](#Members) official submission to Hack@Home under web-based
 - [Basic Working Version](#Basic-Working-Version)
 - [Further Ideas](#Further-Ideas)
 - [License](LICENSE)
-
-<!--I will remove the current o's later as we complete them-->
 
 ## About
 
