@@ -6,6 +6,8 @@
 
 ***Summer-i-ser* is a discord-bot that summaries conversations and records them for future use.**
 
+This project is [our](#Members) official submission to Hack@Home under web-based applications category. A published version of this README is also available [here](https://hackmd.io/@banrovegrie/BJKLiOlPP).
+
 ## Table of Contents
 
 - [About](#About)
@@ -39,6 +41,12 @@ This calls for summarization algorithms that work on scraped data from chat serv
 Among the several instant messaging platforms available, **Discord** is one of the most popular ones. Because of its several innovative features like server-channel systems, awesome call quality, permission management and tools to integrate bots, Discord has become a major platform for people to collaborate, converse and share ideas.
 
 <img src="https://cdn.discordapp.com/attachments/759735584444121110/764862917803769876/unknown.png">
+
+### Our Idea
+
+In this project, we aim to make a **Discord bot** that effectively *summarizes* conversations and allows the user to keep a *record* of these summaries (in an as required basis) on a dedicated website.
+
+This not only allows the user to obtain a **automated-summary** of any given chain of chats, but also allows the user to have easy access to these stored summaries for future reference.
 
 ## Members
 
