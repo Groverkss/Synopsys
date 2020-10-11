@@ -4,7 +4,7 @@
 
 **Synopsys** is a discord-bot that summaries conversations and records them for future use. 
 
-A published version of this README is also available [here](https://hackmd.io/@banrovegrie/BJKLiOlPP). Use [this link](https://summer-iser.web.app/) to checkout the demo webapp.
+A published version of this README is also available [here](https://hackmd.io/@banrovegrie/BJKLiOlPP). Use [this link](https://summer-iser.web.app/) to checkout the demo webapp. Checkout https://youtu.be/BpNmr4FwLCQ for a working demo. 
 
 So, go ahead! Use Synopsis to **find your TL;DRs**.
 
