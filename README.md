@@ -1,5 +1,7 @@
 # Synopsys 
 
+![HackMD documents](https://hackmd.io/badge.svg)
+
 > "Perhaps the best test of a man's intelligence is his capacity for making a summary." - Lytton Strachey, English writer and critic. 
 
 ***Synopsys* is a discord-bot that summaries conversations and records them for future use.**
@@ -105,7 +107,15 @@ To add the record functionality, you need to connect the bot to a firestore data
 
 <!-- Vishva instructions -->
 
-### Implementation
+## Implementation
+
+### Extracting Data
+
+The discord bot works by obtaining all the messages between the given starting message id and the ending message id. The bot then uses the text summarizer we built and obtains keywords and a short summary.
+
+<img src="https://cdn.discordapp.com/attachments/759735584444121110/764909034296836096/unknown.png">
+
+### Text Summarization
 
 The text summarizer works on the mathematical principle of cosine similarity for non-zero vectors.
 
@@ -117,6 +127,19 @@ Additional challenges were cleaning and parsing the data to include only relevan
 
 The summarizer also outputs a list of keywords, on basis of frequency. This list is also cleaned for stopwords and other common words that do not convey the meaning of a sentence.
 
+### Web
+
+The output (after text summarization) is then stored on a Firebase (Firestore) database, which is exposed by a ReactJS app. 
+
+The webapp allows to view the recordings anytime with a summary and keywords.
+
+<img src="https://cdn.discordapp.com/attachments/759735584444121110/764907717327847444/unknown.png">
+
+<img src="https://cdn.discordapp.com/attachments/759735584444121110/764907662344847400/unknown.png">
+
+The following image shows the original conversation thread for the above attached image of summary.
+
+<img src="https://cdn.discordapp.com/attachments/759735584444121110/764908497233379388/unknown.png">
 
 ## Further Ideas
 
@@ -126,8 +149,4 @@ Given, a conversation as data-set in the form of a series of chats, we shall fir
 
 Then, we differentiate chunks of conversation using topic modeling and then using similarity-index upon the few sets of topics to segregate the large chunk of chats.
 
-Once we have identified the primary topic (tag) of a certain series of chats, we build a semantic space of words. With the help of a co-occurrence HAL model, we use the given space we calculate cumulative scores of sentences. Using these scores, we include sentences and generate required summary.
-
-
-
-
+Once we have identified the primary topic (**tag**) of a certain series of chats, we build a semantic space of words. With the help of a co-occurrence **HAL** model, we use the given space we calculate cumulative scores of sentences. Using these scores, we include sentences and generate required summary.
