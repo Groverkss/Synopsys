@@ -6,8 +6,6 @@
 
 ***Summer-i-ser* is a discord-bot that summaries conversations and records them for future use.**
 
-This project is our official submission for Hack@Home under Web-based Application category.
-
 ## Table of Contents
 
 - [About](#About)
