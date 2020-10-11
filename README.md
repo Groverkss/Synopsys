@@ -4,7 +4,7 @@
 
 **Synopsys** is a discord-bot that summaries conversations and records them for future use. 
 
-A published version of this README is also available [here](https://hackmd.io/@banrovegrie/BJKLiOlPP). Use [this link](https://summer-iser.web.app/) to checkout the demo webapp. Checkout [this video](https://youtu.be/BpNmr4FwLCQ) for a working demo. 
+Use [this link](https://summer-iser.web.app/) to checkout the demo webapp. Checkout [this video](https://youtu.be/BpNmr4FwLCQ) for a working demo. 
 
 So, go ahead! Use Synopsis to **find your TL;DRs**.
 
@@ -108,6 +108,8 @@ The team involved in the project comprises of [Kunwar Shaanjeet Singh Grover](ht
     ```
 
 To add the record functionality, you need to connect the bot to a firestore database. Place the serviceAccount.json as firestore/secret.json. This allows the bot to use the record functionality to record database on the corresponding firestore database.
+
+<img src="https://cdn.discordapp.com/attachments/759735584444121110/764920426139746324/unknown.png">
 
 <!-- Vishva instructions -->
 
