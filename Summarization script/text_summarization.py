@@ -10,8 +10,8 @@ from pprint import pprint
 from stringtodict import ListFromString
 
 
-def read_messages():
-    list_of_sentences = ListFromString("sampleinput.txt")
+def read_messages(filename):
+    list_of_sentences = ListFromString(filename)
     all_sents = [sent_tokenize(sent['content']) for sent in list_of_sentences]
     flat_list = [item for sublist in all_sents for item in sublist]
     final_sentences = []
@@ -75,7 +75,7 @@ def generate_summary(filename, percentage=8):
     return ". ".join(summarize_text)
 
 def generate_keywords():
-    sentences = read_messages()
+    sentences = read_messages("sampleinput.txt")
 
 summarized_string = generate_summary("sampleinput.txt")
 keywords = generate_keywords()
