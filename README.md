@@ -1,7 +1,5 @@
 # Synopsys 
 
-![HackMD documents](https://hackmd.io/badge.svg)
-
 > "Perhaps the best test of a man's intelligence is his capacity for making a summary." - Lytton Strachey, English writer and critic. 
 
 ***Synopsys* is a discord-bot that summaries conversations and records them for future use.**
@@ -46,8 +44,7 @@ This not only allows the user to obtain a **automated-summary** of any given cha
 - Firebase and Firestore 
 - Google Cloud for hosting the bot on a virtual machine
 - `Discord.py` for functionality of discord bot
-- nltk for conversation summarisation
-- React for creating the frontend interference
+- React for creating the frontend interface
 
 For a detailed description regarding the current implementation check [this](#Implementation).
 
@@ -129,6 +126,8 @@ Given, a conversation as data-set in the form of a series of chats, we shall fir
 
 Then, we differentiate chunks of conversation using topic modeling and then using similarity-index upon the few sets of topics to segregate the large chunk of chats.
 
-Once we have identified the primary topic (tag) of a certain series of chats, we build a semantic space of words. With the help of a co-occurrence HAL model, we use the given space we calculate cumulative scores of sentences.
+Once we have identified the primary topic (tag) of a certain series of chats, we build a semantic space of words. With the help of a co-occurrence HAL model, we use the given space we calculate cumulative scores of sentences. Using these scores, we include sentences and generate required summary.
 
-Using these scores, we include sentences and generate required summary.
+
+
+
