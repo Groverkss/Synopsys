@@ -34,6 +34,12 @@ Such conversations involve a substantial amount of participants and a single con
 
 This calls for summarization algorithms that work on scraped data from chat services and yield a summary as required.
 
+### About Discord
+
+Amongst the several instant messaging platforms available, **Discord** is one of the most popular ones. Because of its several innovative features like server-channel systems, awesome call quality, permission management and tools to integrate bots, Discord has become a major platform for people to collaborate, converse and share ideas.
+
+<img src="https://cdn.discordapp.com/attachments/759735584444121110/764862917803769876/unknown.png">
+
 ## Members
 
 The team involved in the project comprises of [Kunwar Shaanjeet Singh Grover](https://github.com/Groverkss), [Vishva Saravanan](https://github.com/v15hv4), [Mayank Goel](https://github.com/MayankGoel28) and [Alapan Chaudhuri](https://github.com/banrovegrie), respectively.
