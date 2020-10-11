@@ -18,7 +18,7 @@ export default () => {
 
     if (records.length === 0) return null;
     return (
-        <Container>
+        <Container className="pb-5">
             {console.log(records)}
             <Row>
                 {records.map((record) => (

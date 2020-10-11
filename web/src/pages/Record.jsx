@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Card } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 import firebase from "../firebase";
 
 import Message from "../components/Message";
@@ -23,7 +23,9 @@ export default (props) => {
 
         const messagesRef = firebase.firestore().collection("messages");
         async function getMessages() {
-            const snapshot = await messagesRef.where("record", "==", recordRef).get();
+            const snapshot = await messagesRef
+                .where("record", "==", `/records/${props.match.params.id}`)
+                .get();
             if (snapshot.empty) {
                 console.log("No messages!");
             } else {
@@ -37,7 +39,7 @@ export default (props) => {
 
     if (messages.length === 0) return null;
     return (
-        <Container>
+        <Container className="pb-5">
             <Row>
                 <Col md={6}>
                     <Row>
