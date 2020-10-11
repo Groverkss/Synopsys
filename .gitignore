@@ -131,4 +131,6 @@ dmypy.json
 # Run Script
 run.sh
 
+# Vim configs
 .vim
+*.swp
