@@ -1,6 +1,14 @@
 from discord.ext import commands
 from json import dump, load
 
+import sys
+
+sys.path.append(
+    "/home/kunwar/Desktop/Projects/Summariser-Bot/Summarization script"
+)
+
+from text_summarization import generate_summary
+
 
 class Record(commands.Cog):
     def __init__(self, bot):
@@ -56,14 +64,12 @@ class Record(commands.Cog):
             if message.clean_content
         ]
 
-        await ctx.send("Done.")
+        await ctx.send("Done reading!.")
+        await ctx.send("Summarizing...")
 
-        # for message in clean_messages:
-        #     for values in message.values():
-        #         print(values, end="\t")
-        #     print()
+        summary = generate_summary(clean_messages)
 
-        return
+        await ctx.send(summary)
 
 
 def setup(bot):
