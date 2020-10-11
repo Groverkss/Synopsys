@@ -1,0 +1,9 @@
+Yes, I'm afraid you have to worry about this.
+
+What is it, you ask? Well, back when I was at Amazon, we did (and they undoubtedly still do) a LOT of soul-searching about this exact problem. We eventually concluded that every single employee E at Amazon has at least one "Interview Anti-Loop": a set of other employees S who would not hire E. The root cause is important for you to understand when you're going into interviews, so I'll tell you a little about what I've found over the years.
+
+First, you can't tell interviewers what's important. Not at any company. Not unless they're specifically asking you for advice. You have a very narrow window of perhaps one year after an engineer graduates from college to inculcate them in the art of interviewing, after which the window closes and they believe they are a "good interviewer" and they don't need to change their questions, their question styles, their interviewing style, or their feedback style, ever again.
+
+It's a problem. But I've had my hand bitten enough times that I just don't try anymore.
+
+Second problem: every "experienced" interviewer has a set of pet subjects and possibly specific questions that he or she feels is an accurate gauge of a candidate's abilities. The question sets for any two interviewers can be widely different and even entirely non-overlapping.
