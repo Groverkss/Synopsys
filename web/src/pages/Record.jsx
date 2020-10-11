@@ -47,8 +47,16 @@ export default (props) => {
                     </Row>
                 </Col>
                 <Col>
-                    {`Keywords: ${keywords}`}
-                    {`Summary: ${summary}`}
+                    <Container fluid className="rounded p-4 discord-bg-tertiary">
+                        <div className="mb-3">
+                            <h3 className="discord-fg-primary"> summary </h3>
+                            <div className="discord-fg-primary"> {summary} </div>
+                        </div>
+                        <div className="mt-3">
+                            <h4 className="discord-fg-primary"> keywords </h4>
+                            <div className="discord-fg-secondary"> {keywords} </div>
+                        </div>
+                    </Container>
                 </Col>
             </Row>
         </Container>
