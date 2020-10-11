@@ -29,7 +29,10 @@ export default () => {
                             className="w-100 discord-bg-tertiary discord-fg-primary my-2"
                         >
                             <CardBody>
-                                Recording: {record.datetime.toDate().toLocaleString()}
+                                <div>Recording: {record.datetime.toDate().toLocaleString()}</div>
+                                <div className="discord-fg-secondary mt-3">
+                                    Keywords: {record.keywords.join(", ")}
+                                </div>
                             </CardBody>
                         </Card>
                     </Col>
