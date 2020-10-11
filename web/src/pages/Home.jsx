@@ -29,7 +29,7 @@ export default () => {
                             className="w-100 discord-bg-tertiary discord-fg-primary my-2"
                         >
                             <CardBody>
-                                <h3>Recording: {record.datetime.toDate().toLocaleString()}</h3>
+                                Recording: {record.datetime.toDate().toLocaleString()}
                             </CardBody>
                         </Card>
                     </Col>
