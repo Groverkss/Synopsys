@@ -1,6 +1,8 @@
-# Summeriser-Bot
+# Summer-i-ser
 
-### A Discord-bot that summaries conversations and records them for future use.
+![HackMD documents](https://hackmd.io/badge.svg)
+
+**Summer-i-ser:** *a discord-bot that summaries conversations and records them for future use.*
 
 > Perhaps the best test of a man's intelligence is his capacity for making a summary.
 
