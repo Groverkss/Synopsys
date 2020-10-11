@@ -11,17 +11,14 @@ This project is [our](#Members) official submission to Hack@Home under web-based
 ## Table of Contents
 
 - [About](#About)
-    - Introduction
-    - Technologies Involved
-    - Citations
 - [Members](#Members)
-- [Basic Working Version](#demo)
+- [Basic Working Version](#Basic-Working-Version)
     - Features
     - Pre-requisites
     - Getting Started
     - Implementation
     - Project Structure
-- [Further Development](#further)
+- [Further Development](#Further-Development)
 - [License](LICENSE)
 
 <!--I will remove the current o's later as we complete them-->
@@ -44,9 +41,25 @@ Among the several instant messaging platforms available, **Discord** is one of t
 
 ### Our Idea
 
-In this project, we aim to make a **Discord bot** that effectively *summarizes* conversations and allows the user to keep a *record* of these summaries (in an as required basis) on a dedicated website.
+In this project, we aim to make a **Discord bot** that effectively *summarizes* conversations and allows the user to keep a *record* of these summaries on a dedicated website.
 
 This not only allows the user to obtain a **automated-summary** of any given chain of chats, but also allows the user to have easy access to these stored summaries for future reference.
+
+### Technologies Involved
+
+<!--The current implementation is majorly based on python. We have used ...
+For a detailed description regarding the current implementation check [this](#Implementation).
+(lot more to add)-->
+
+### Automated Chat Summarization
+
+Automated-summarization of text has been applied to quite a lot of genres including varities of articles, scientific papers and blogs.
+
+However, when compared to the above examples, very little work has been done in the field of chat summarization. This is because there are several problems associated with it due to fact that chats are inherently noisy, unstructured, informal and involves frequent shifts in topic.
+
+Our current working version uses a basic **cosine-similarity model** to generate a unique set of words (keywords) and thus use these keywords to evaluate the given data set of chats and return only *most unique sentences* as a part of the summary. This basic summarization is effectively extractive by nature. For a detailed description on implementation of this model, look [here](#Implementation).
+
+Our further plan involves using more accurate and sophisticated algorithms for the purpose of summarization. We have explained our proposed model in [further developments](#Further-Development).
 
 ## Members
 
