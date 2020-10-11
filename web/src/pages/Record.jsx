@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col } from "reactstrap";
+import { Container, Row, Col, Card } from "reactstrap";
 import firebase from "../firebase";
 
 export default (props) => {
@@ -36,24 +36,22 @@ export default (props) => {
     if (messages.length === 0) return null;
     return (
         <Container>
-            {console.log(messages)}
             <Row>
                 <Col md={6}>
                     <Row>
                         {messages.map((message) => (
                             <Col xs={12} key={message.id}>
-                                {message.author}
-                                {`${message.datetime.toDate()}`}
-                                {message.content}
+                                <Card className="w-50">
+                                    <div>{`${message.author} at ${message.datetime.toDate()}`}</div>
+                                    {message.content}
+                                </Card>
                             </Col>
                         ))}
                     </Row>
                 </Col>
                 <Col>
-                    <Container fluid>
-                        {`Keywords: ${keywords}`}
-                        {`Summary: ${summary}`}
-                    </Container>
+                    {`Keywords: ${keywords}`}
+                    {`Summary: ${summary}`}
                 </Col>
             </Row>
         </Container>
