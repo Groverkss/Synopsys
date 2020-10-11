@@ -156,3 +156,7 @@ Given, a conversation as data-set in the form of a series of chats, we shall fir
 Then, we differentiate chunks of conversation using topic modeling and then using similarity-index upon the few sets of topics to segregate the large chunk of chats.
 
 Once we have identified the primary topic (**tag**) of a certain series of chats, we build a semantic space of words. With the help of a co-occurrence **HAL** model, we use the given space we calculate cumulative scores of sentences. Using these scores, we include sentences and generate required summary.
+
+- **Text Segmentation:** We can use Longest Contiguous Messages (LCM) for this.
+- **Topic Modeling:** Latent Dirichlet Allocation can be used for this.
+- **Summary Generation:** HAL space can be used to create a probabilistic model to generate scores by normalizing the count of terms. 
