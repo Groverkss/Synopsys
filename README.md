@@ -1,6 +1,6 @@
 # Summeriser-Bot
 
-<!--A bot that summaries conversations and records them for future use.-->
+### A Discord-bot that summaries conversations and records them for future use.
 
 > Perhaps the best test of a man's intelligence is his capacity for making a summary.
 
