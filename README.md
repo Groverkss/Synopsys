@@ -29,6 +29,7 @@ This project is our official submission for Hack@Home under Web-based Applicatio
 ### Introduction
 
 Today, especially when the world lies in the grasps of the Corona-virus, a considerable chunk of information exchange happens in the form of **online chat conversations**.
+
 Such conversations involve a substantial amount of participants and a single conversation tends to span a wide range of topics interspersed with irrelevant segments. This results in the necessity of having proper **summarization**, so that people who were not present during a long (not necessarily coherent) conversation need not read through the big chain of chats to follow-up on it and can rather read a summary of the same, thus saving a lot of time.
 
 ## Members
