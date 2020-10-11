@@ -36,7 +36,7 @@ This calls for summarization algorithms that work on scraped data from chat serv
 
 ### About Discord
 
-Amongst the several instant messaging platforms available, **Discord** is one of the most popular ones. Because of its several innovative features like server-channel systems, awesome call quality, permission management and tools to integrate bots, Discord has become a major platform for people to collaborate, converse and share ideas.
+Among the several instant messaging platforms available, **Discord** is one of the most popular ones. Because of its several innovative features like server-channel systems, awesome call quality, permission management and tools to integrate bots, Discord has become a major platform for people to collaborate, converse and share ideas.
 
 <img src="https://cdn.discordapp.com/attachments/759735584444121110/764862917803769876/unknown.png">
 
