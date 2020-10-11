@@ -60,7 +60,7 @@ def build_similarity_matrix(sentences, stop_words):
     return similarity_matrix
 
 
-def generate_summary(file_name):
+def generate_summary(file_name, percentage=8):
     stop_words = stopwords.words('english')
     summarize_text = []
     sentences = read_messages(file_name)
@@ -69,7 +69,7 @@ def generate_summary(file_name):
     scores = nx.pagerank(sentence_similarity_graph)
     ranked_sentence = sorted(
         ((scores[i], s) for i, s in enumerate(sentences)), reverse=True)
-    top_n = len(ranked_sentence)//(100//8)
+    top_n = len(ranked_sentence)//(100//percentage)
     for i in range(top_n):
         summarize_text.append("".join(ranked_sentence[i][1]))
     return ". ".join(summarize_text)
