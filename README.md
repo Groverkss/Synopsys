@@ -6,7 +6,7 @@
 
 Use [this link](https://summer-iser.web.app/) to checkout the demo webapp. Checkout [this video](https://youtu.be/BpNmr4FwLCQ) for a working demo. 
 
-So, go ahead! Use Synopsis to **find your TL;DRs**.
+So, go ahead! Use Synopsys to **find your TL;DRs**.
 
 ## Table of Contents
 
