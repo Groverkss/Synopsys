@@ -4,7 +4,8 @@
 
 **Synopsys** is a discord-bot that summaries conversations and records them for future use. 
 
-Use [this link](https://summer-iser.web.app/) to checkout the demo webapp. Checkout [this video](https://youtu.be/BpNmr4FwLCQ) for a working demo. 
+- Use [this link](https://summer-iser.web.app/) to checkout the demo webapp. 
+- Checkout [this video](https://youtu.be/BpNmr4FwLCQ) for a working demo. 
 
 So, go ahead! Use Synopsys to **find your TL;DRs**.
 
@@ -50,13 +51,13 @@ This not only allows the user to obtain a **automated-summary** of any given cha
 - Firebase and Firestore 
 - Google Cloud for hosting the bot on a virtual machine
 - `Discord.py` for functionality of discord bot
-- React for creating the frontend interface
+- React for creating the front-end interface
 
 For a detailed description regarding the current implementation check [this](#Implementation).
 
 ### Automated Chat Summarization
 
-Automated-summarization of text has been applied to quite a lot of genres including varities of articles, scientific papers and blogs.
+Automated-summarization of text has been applied to quite a lot of genres including varieties of articles, scientific papers and blogs.
 
 However, when compared to the above examples, very little work has been done in the field of chat summarization. This is because there are several problems associated with it due to fact that chats are inherently noisy, unstructured, informal and involves frequent shifts in topic.
 
@@ -72,8 +73,8 @@ The team involved in the project comprises of [Kunwar Shaanjeet Singh Grover](ht
 
 ### Features
 
-- Easy to use conversation summerisation based on discord messages
-- Sick of scrolling back thousands of messages to get an important conversation you had? Record the conversation and review it again anytime the webinterface which gives a summary of the conversation as well as the keywords.
+- Easy to use conversation summarization based on discord messages
+- Sick of scrolling back thousands of messages to get an important conversation you had? Record the conversation and review it again anytime the web-interface which gives a summary of the conversation as well as the keywords.
 - Can be added to any required server
 
 ## Installation
@@ -109,9 +110,6 @@ The team involved in the project comprises of [Kunwar Shaanjeet Singh Grover](ht
 
 To add the record functionality, you need to connect the bot to a firestore database. Place the serviceAccount.json as firestore/secret.json. This allows the bot to use the record functionality to record database on the corresponding firestore database.
 
-<img src="https://cdn.discordapp.com/attachments/759735584444121110/764920426139746324/unknown.png">
-
-<!-- Vishva instructions -->
 
 ## Implementation
 
@@ -121,9 +119,9 @@ The discord bot works by obtaining all the messages between the given starting m
 
 <img src="https://cdn.discordapp.com/attachments/759735584444121110/764909034296836096/unknown.png">
 
-### Text Summarization
+### Summarization
 
-The text summarizer works on the mathematical principle of cosine similarity for non-zero vectors.
+The chat summarizer works on the mathematical principle of cosine similarity for non-zero vectors.
 
 For this, we have represented each line as a vector, of unique words, quantifying it on basis of how "important" or frequent it is, and this idea is done using a graph-based TextRank algorithm on the similarity matrix generated on the above vectors. 
 
