@@ -17,10 +17,6 @@ class Utilities(commands.Cog):
             )
             return
 
-        summary, keywords, clean_messages = await convert_to_summary(
-            ctx, start, end
-        )
-
         channel = ctx.channel
         try:
             start_message = await channel.fetch_message(start)
