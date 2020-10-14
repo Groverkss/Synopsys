@@ -117,15 +117,11 @@ To add the record functionality, you need to connect the bot to a firestore data
 
 The discord bot works by obtaining all the messages between the given starting message id and the ending message id. The bot then uses the text summarizer we built and obtains keywords and a short summary.
 
-<img src="https://cdn.discordapp.com/attachments/759735584444121110/764909034296836096/unknown.png">
-
 ### Summarization
 
 The chat summarizer works on the mathematical principle of cosine similarity for non-zero vectors.
 
 For this, we have represented each line as a vector, of unique words, quantifying it on basis of how "important" or frequent it is, and this idea is done using a graph-based TextRank algorithm on the similarity matrix generated on the above vectors. 
-
-<img src="https://cdn.discordapp.com/attachments/702963059764887656/764891735427514378/unknown.png">
 
 Additional challenges were cleaning and parsing the data to include only relevant keywords, and this involved removal of stopwords and manual addition of common words. Additionally, discord usernames and other special characters like emojis were removed. 
 
@@ -136,14 +132,6 @@ The summarizer also outputs a list of keywords, on basis of frequency. This list
 The output (after text summarization) is then stored on a Firebase (Firestore) database, which is exposed by a ReactJS app. 
 
 The webapp allows to view the recordings anytime with a summary and keywords.
-
-<img src="https://cdn.discordapp.com/attachments/759735584444121110/764907717327847444/unknown.png">
-
-<img src="https://cdn.discordapp.com/attachments/759735584444121110/764907662344847400/unknown.png">
-
-The following image shows the original conversation thread for the above attached image of summary.
-
-<img src="https://cdn.discordapp.com/attachments/759735584444121110/764908497233379388/unknown.png">
 
 Link to the mentioned web-app: [Synopsis App](https://summer-iser.web.app/).
 
